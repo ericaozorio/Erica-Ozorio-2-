@@ -19,4 +19,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./public_html/portfolio/
-          secure: false #
+           protocol: ftp       
+          security: loose 
