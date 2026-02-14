@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './index.css'; // Importação do CSS para garantir que o build processe os estilos
 
-const rootElement = document.getElementById('root');
+const rootId = 'erica-ozorio-portfolio';
+const rootElement = document.getElementById(rootId);
+
 if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
+  console.error(`Elemento com id '${rootId}' não encontrado. Certifique-se de usar o shortcode [portfolio_aura] no WordPress.`);
+} else {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
 }
-
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
